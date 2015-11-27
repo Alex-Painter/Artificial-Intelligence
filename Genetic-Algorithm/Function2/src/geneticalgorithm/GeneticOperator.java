@@ -158,7 +158,7 @@ public class GeneticOperator {
     }
 
     /*
-     Uniform Crossover   
+     Uniform Crossover
      */
     public Population uniformCrossover(Population pop, double ratio) {
         Population offspring = new Population(pop.getSize(), false);
@@ -267,10 +267,10 @@ public class GeneticOperator {
     //This copies the chromosome from the parent to the child
     //This circumnavigates the problem of copying objects such as individuals
     //  and arrays. I found adding these to an new population would just copy a
-    //  pointer to the object rather than copy it. This meant, for example, if 
-    //  ndividual 4 was present in a population more than once becuase of
-    //  tournamemt selection an operation on that individual would affect all 3.
-    //This caused the populations to become full the same individual; all pointers
+    //  pointer to the object rather than copying it to a new object. This meant, for example, if
+    //  individual 4 was present in a population more than once becuase of
+    //  tournamemt selection an operation on that individual would affect all of them.
+    //This caused the populations to become full the same individual object; all pointers
     //  to the same object.
     public void copyChromo(Individual parent, Individual child) {
         for (int i = 0; i < parent.getChromosome().length; i++) {
